@@ -52,7 +52,7 @@ import React, { useState } from 'react'; /* STEP 0 */
 export default function Counter() {
   /* STEP 1 */
   const [ count, setCount ] = useState(0);
-  console.log(count, setCount);
+  // console.log(count, setCount);
   const increment = () => {
     /* STEP 4 */
   };
@@ -70,18 +70,19 @@ export default function Counter() {
   };
 
   // ternary operator for style object
-  count % 2 === 0 ? style.color === 'royalblue' : style.color === crimson
+  count % 2 === 0 ? style.color = 'royalblue' : style.color = 'crimson'
+  console.log(style);
 
   return (
     <div className='widget-counter container'>
       <h2>Counter</h2>
       <div id='count' style={style}>
-        Number 0 is even {/* STEP 3 */}
+        Number { count } is { count % 2 === 0 ? 'even' : 'odd' }
       </div>
       <div>
-        <button id='increment' onClick={increment}>Increment</button>
-        <button id='decrement' onClick={decrement}>Decrement</button>
-        <button id='resetCount' onClick={reset}>Reset</button>
+        <button id='increment' onClick={ () => setCount(count + 1) }>Increment</button>
+        <button id='decrement' onClick={ () => setCount(count - 1) }>Decrement</button>
+        <button id='resetCount' onClick={ () => setCount(0) }>Reset</button>
       </div>
     </div>
   );
