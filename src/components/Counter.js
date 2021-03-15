@@ -71,7 +71,7 @@ export default function Counter() {
 
   // ternary operator for style object
   count % 2 === 0 ? style.color = 'royalblue' : style.color = 'crimson'
-  console.log(style);
+  // console.log(style);
 
   return (
     <div className='widget-counter container'>
