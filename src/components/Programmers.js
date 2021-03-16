@@ -38,10 +38,19 @@ export default function Programmers() {
     // The beauty of closures is that we can "see" both slices of state from this region
     // of the program, without needing to inject the information through arguments.
 
-    
-    setProgrammers()
+    let programmerName
 
-    return 
+    programmers.forEach(function(programmer) {
+      if(programmer.id === programmerId) {
+        console.log(programmer.name);
+        programmerName = programmer.name;
+      }
+    });
+    
+    return programmerName;
+    // console.log(programmers);
+    // setProgrammers()
+    // return setProgrammers(programmers[programmerId - 1].name);
 
   };
 
