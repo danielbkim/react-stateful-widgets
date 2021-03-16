@@ -36,9 +36,16 @@ export default function Squares() {
     // It should return a string containing the class name of 'active', if the id passed
     // as the argument matches the active square in state, empty string otherwise.
     // Right-click and "inspect element" on the square to see its effect.
+    // console.log(squares, id);
+    let squareClass
 
+    // squares.forEach(function(square){
+    //   id === square
+    // });
 
-    return ''
+    // activeSquare === id ? squareClass = id : squareClass = null
+
+    return squareClass;
   };
 
   const markActive = id => {
@@ -46,6 +53,9 @@ export default function Squares() {
     // Set the id argument to become the active id in state
     // (unless it already is, in which case we should reset
     // the currently active square id back to initial state).
+    
+    activeSquare ? setActiveSquare(null) : setActiveSquare(id);
+    console.log(id, activeSquare);
   };
 
   return (
