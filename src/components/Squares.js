@@ -43,9 +43,12 @@ export default function Squares() {
     //   id === square
     // });
 
-    // activeSquare === id ? squareClass = id : squareClass = null
-
-    return squareClass;
+    // if(activeSquare === id) {
+    //   return 'active';
+    // } else {
+    //   return 'inactive';
+    // }
+    return activeSquare === id ? 'active' : 'inactive'
   };
 
   const markActive = id => {
@@ -55,7 +58,7 @@ export default function Squares() {
     // the currently active square id back to initial state).
     
     activeSquare ? setActiveSquare(null) : setActiveSquare(id);
-    console.log(id, activeSquare);
+    // console.log(id, activeSquare);
   };
 
   return (
@@ -70,7 +73,7 @@ export default function Squares() {
             <div
               id={id}
               key={id}
-              className={`square${getClassName(id)}`}
+              className={`square ${getClassName(id)}`}
               onClick={() => markActive(id)}
             >
             </div>
